@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #e778b5;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  
+  .container {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .carta {
+    border-radius: 10px;
+    padding: 20px;
+    width: 90%;
+    max-width: 400px;
+  }
+  
+  .mensaje-carta {
+    display: none;
+    margin-top: 20px;
+  }
+  
+  .marco-corazon {
+    padding: 15px;
+    border: 5px solid transparent;
+    border-image: url('https://cdn-icons-png.flaticon.com/512/1077/1077035.png') 120 round;
+    text-align: center;
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
+  
+  button {
+    font-size: 70px;
+    background-color: #e83e8c;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    outline: none;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    animation: palpitar 1.5s infinite;
+  }
+  
+  @keyframes palpitar {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+  }
+  
+  .corazones {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+  }
+  
+  .corazon, .imagen {
+    position: absolute;
+    animation: corazonAnimacion 5s ease-in-out infinite;
+    opacity: 1; /* Aparece inicialmente */
+    transition: opacity 1s ease-out; /* Animación de difuminado */
+  }
+  
+  .corazon {
+    font-size: 2rem;
+    color: red;
+  }
+  
+  .imagen {
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+    border-radius: 50%;
+  }
+  
+  @keyframes corazonAnimacion {
+    0% {
+      opacity: 0;
+      transform: translateY(0);
+    }
+    50% {
+      opacity: 1;
+      transform: translateY(-50px);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(0);
+    }
+  }
+   
